@@ -1,6 +1,5 @@
 /node_modules
 package-lock.json
 /uploads
-/transcribed
-/machine_learning/model
+/machine_learning/__pycache__
 .DS_Store

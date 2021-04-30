@@ -15,9 +15,8 @@ app.use(fileUpload());
 
 app.get('/api/processFile', (req, res) => {
     var fileName = req.query.fileName
-    fileName = `./uploads/${fileName}`
     var spawn = require("child_process").spawn;
-    var process = spawn('python3', ["./machine_learning/test.py",
+    var process = spawn('python3', ["./machine_learning/predict.py",
         fileName]);
     process.stdout.on('data', (data) => {
         res.send({ mloutput: data.toString() });
