@@ -7,4 +7,5 @@ def main(argv):
     print(f"This the file you pass in: {argv}")
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    # main(sys.argv[1:])
+    main(sys.argv)

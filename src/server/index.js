@@ -44,7 +44,8 @@ app.get('/api/getFileName', (req, res) => {
         for (i = 0; i < outputFileList.length; i++) {
             var tempObj = {
                 name: outputFileList[i],
-                value: outputFileList[i]
+                value: outputFileList[i],
+                isChecked: false
             }
             outputArr.push(tempObj)
         }

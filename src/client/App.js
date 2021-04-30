@@ -5,6 +5,7 @@ import VideoPlayer from './videoplayer';
 import { Dropdown, Button } from 'react-bootstrap';
 import axios from 'axios';
 import LoadingOverlay from 'react-loading-overlay';
+import CheckBox from './checkbox';
 
 
 export default class App extends Component {
@@ -38,13 +39,22 @@ export default class App extends Component {
     });
   }
 
-  processSelect(chosenFile) {
+  componentDidUpdate() {
+    console.log(this.state.uploadedFiles)
+  }
+
+  processSelect() {
+
+    let allFiles = this.state.uploadedFiles.filter(name => name.isChecked === true);
+    let chosenFiles = []
+    allFiles.map(({name,value})=> chosenFiles.push(name) )
+
     this.setState((state) => {
       return { isLoading: true }
     });
     axios.get('http://0.0.0.0:8080/api/processFile', {
       params: {
-        fileName: chosenFile
+        fileName: chosenFiles
       }
     }).then(res => {
       this.setState({
@@ -52,6 +62,21 @@ export default class App extends Component {
         isLoading: false
       })
     }).catch(err => console.log(err))
+  }
+
+  handleAllChecked = (event) => {
+    let uploadedFiles = this.state.uploadedFiles
+    uploadedFiles.forEach(uploadedFile => uploadedFile.isChecked = event.target.checked)
+    this.setState({ uploadedFiles: uploadedFiles })
+  }
+
+  handleCheckChieldElement = (event) => {
+    let uploadedFiles = this.state.uploadedFiles
+    uploadedFiles.forEach(uploadedFile => {
+      if (uploadedFile.value === event.target.value)
+        uploadedFile.isChecked = event.target.checked
+    })
+    this.setState({ uploadedFiles: uploadedFiles })
   }
 
   render() {
@@ -86,18 +111,17 @@ export default class App extends Component {
             {this.state.videoUrl &&
               <div style={{ display: "flex", justifyContent: 'flex-end' }}>
                 <VideoPlayer videoUrl={this.state.videoUrl} />
-                <Button onClick={() => { this.processSelect(this.state.videoUrl) }} variant="warning">Process</Button>
               </div>
             }
           </section>
           <section id='section1' style={{ textAlign: 'center', backgroundColor: 'orange' }}>
             {
-              this.state.isLoading ? <LoadingOverlay style={{justifyContent:'center',display:'flex'}}
+              this.state.isLoading ? <LoadingOverlay style={{ justifyContent: 'center', display: 'flex' }}
                 active={this.state.isLoading}
                 spinner
               >
                 <p>Processing Your Model....</p>
-              </LoadingOverlay> : <div/>
+              </LoadingOverlay> : <div />
             }
             {this.state.pythonOutput &&
               <div style={{ display: "flex", justifyContent: 'flex-end' }}>
@@ -105,6 +129,16 @@ export default class App extends Component {
               </div>
             }
           </section>
+          <h1> Check and Uncheck All Example </h1>
+          <input type="checkbox" onClick={this.handleAllChecked} value="checkedall" /> Check / Uncheck All
+        <ul>
+            {
+              this.state.uploadedFiles.map((uploadedFile) => {
+                return (<CheckBox handleCheckChieldElement={this.handleCheckChieldElement}  {...uploadedFile} />)
+              })
+            }
+          </ul>
+          <Button onClick={() => { this.processSelect() }} variant="warning">Process</Button>
         </div>
 
       </div>
