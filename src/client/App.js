@@ -28,7 +28,7 @@ export default class App extends Component {
   }
 
   getLocalFileNames() {
-    const fileURL = `/api/getFileName`
+    const fileURL = `${apiURL}/api/getFileName`
     axios.get(fileURL, {
     }).then(res => {
       this.setState({
@@ -50,7 +50,7 @@ export default class App extends Component {
     this.setState((state) => {
       return { isLoading: true }
     });
-    axios.get(`/api/processFile`, {
+    axios.get(`${apiURL}/api/processFile`, {
       params: {
         fileName: chosenFiles
       }
