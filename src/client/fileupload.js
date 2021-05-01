@@ -22,7 +22,7 @@ function FileUpload() {
     const uploadFile = () => {
         const formData = new FormData();
         formData.append('file', file)
-        axios.post(`${apiURL}/api/upload`, formData, {
+        axios.post(`/api/upload`, formData, {
             onUploadProgress: (ProgressEvent) => {
                 let progress = Math.round(ProgressEvent.loaded / ProgressEvent.total * 100) + '%';
                 setProgress(progress)

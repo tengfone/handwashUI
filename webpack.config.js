@@ -36,7 +36,8 @@ module.exports = {
   },
   devServer: {
     host: '0.0.0.0',
-    open: true
+    open: true,
+    historyApiFallback: true
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
