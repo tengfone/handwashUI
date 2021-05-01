@@ -7,8 +7,8 @@ import axios from 'axios';
 import LoadingOverlay from 'react-loading-overlay';
 import CheckBox from './checkbox';
 
-// const apiURL = process.env.apiURL
-const apiURL = 'http://0.0.0.0:8080'
+const apiURL = process.env.apiURL
+// const apiURL = 'http://0.0.0.0:8080'
 
 export default class App extends Component {
 

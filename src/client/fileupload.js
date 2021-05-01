@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import axios from 'axios';
 
-// const apiURL = process.env.apiURL
-const apiURL = 'http://0.0.0.0:8080'
+const apiURL = process.env.apiURL
+// const apiURL = 'http://0.0.0.0:8080'
 
 function FileUpload() {
 
