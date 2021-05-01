@@ -23,9 +23,8 @@ Please visit [Model Info](https://github.com/huiwen99/HandWash)
 ## Installation
 Either run it locally or on an AWS EC2 Instance (XLarge with 32GB Disk Storage on Ubuntu LTS 20.X). You will need to have the following packages found under Technologies to run. Note that the API URL address calls found in ```App.js``` and ```fileupload.js``` must be changed if running on a cloud server, for running locally, no changes are required. Ensure that there is a root folder called ```uploads``` before uploading any files.
 
+```npm install```   
+```npm run dev```
+
 ## Demo
 [![YouTube Demo Link](http://img.youtube.com/vi/DLfKYGBf7oE/0.jpg)](https://www.youtube.com/watch?v=DLfKYGBf7oE "50.039 : Theory and Practice of Deep Learning_BigProject_Group5_HandWash")
-
-
-```npm install```
-```npm run dev```
