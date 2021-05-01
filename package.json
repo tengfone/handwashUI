@@ -16,6 +16,7 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.5.3",
     "cors": "^2.8.5",
+    "dotenv-webpack": "^7.0.2",
     "express": "^4.16.3",
     "express-fileupload": "^1.2.0",
     "react": "^16.5.2",
@@ -23,7 +24,6 @@
     "react-dom": "^16.5.2",
     "react-loading-overlay": "^1.0.1",
     "react-player": "^2.9.0",
-    "react-table": "^7.7.0",
     "walk": "^2.3.14"
   },
   "devDependencies": {

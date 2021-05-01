@@ -7,6 +7,8 @@ import axios from 'axios';
 import LoadingOverlay from 'react-loading-overlay';
 import CheckBox from './checkbox';
 
+const apiURL = process.env.apiURL
+
 export default class App extends Component {
 
   constructor() {
@@ -25,7 +27,7 @@ export default class App extends Component {
   }
 
   getLocalFileNames() {
-    axios.get('http://0.0.0.0:8080/api/getFileName', {
+    axios.get(`http://0.0.0.0:8080/api/getFileName`, {
     }).then(res => {
       this.setState({
         uploadedFiles: res.data.allFilesName
