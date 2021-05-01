@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react';
 import axios from 'axios';
 
-const apiURL = process.env.apiURL
-// const apiURL = 'http://0.0.0.0:8080'
+
+// axios.defaults.baseURL = process.env.apiURL
+// const apiURL = process.env.apiURL
 
 function FileUpload() {
 
@@ -22,14 +23,14 @@ function FileUpload() {
     const uploadFile = () => {
         const formData = new FormData();
         formData.append('file', file)
-        axios.post(`${apiURL}/api/upload`, formData, {
+        axios.post(`http://0.0.0.0:8080/api/upload`, formData, {
             onUploadProgress: (ProgressEvent) => {
                 let progress = Math.round(ProgressEvent.loaded / ProgressEvent.total * 100) + '%';
                 setProgress(progress)
             }
         }).then(res => {
             console.log(res);
-            getFile({ name: res.data.name, path: `${apiURL}` + res.data.path, py: res.data.py })
+            getFile({ name: res.data.name, path: 'http://0.0.0.0:8080' + res.data.path, py: res.data.py })
         }).catch(err => console.log(err))
     }
 
