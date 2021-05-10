@@ -10,6 +10,10 @@ Due to the recent COVID-19 outbreak, handwashing with soap can be one of the def
 Download the latest pre-trained Alexnet trained model [here](https://storage.googleapis.com/dl-big-project/alexnet_128.pt) and place into ./machine_learning/model   
 For more information regarding the model architecture: [Model Info](https://github.com/huiwen99/HandWash)
 
+## Demo (NEW UI)
+Hosted on [Heroku](https://www.heroku.com) and powered by [StreamLit](https://streamlit.io/).   
+[Demo](https://handwashdl.herokuapp.com/)
+
 ## Screenshot
 <img src="./ss_1.png" width="800" height="800">
 <img src="./ss_2.png" width="800" height="800">
