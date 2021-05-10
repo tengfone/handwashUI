@@ -14,7 +14,7 @@ For more information regarding the model architecture: [Model Info](https://gith
 Hosted on [Heroku](https://www.heroku.com) and powered by [StreamLit](https://streamlit.io/).   
 [Demo](https://handwashdl.herokuapp.com/)
 
-## Screenshot
+## Screenshot (OLD UI)
 <img src="./ss_1.png" width="800" height="800">
 <img src="./ss_2.png" width="800" height="800">
 
