@@ -13,6 +13,7 @@ For more information regarding the model architecture: [Model Info](https://gith
 ## Demo (NEW UI)
 Hosted on [Heroku](https://www.heroku.com) and powered by [StreamLit](https://streamlit.io/).   
 [Demo](https://handwashdl.herokuapp.com/)
+[Source Code](https://github.com/tengfone/handwashStreamLit)
 
 ## Screenshot (OLD UI)
 <img src="./ss_1.png" width="800" height="800">
